@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-5, created on 2018-11-03 20:06:49
+/* Smarty version 3.1.34-dev-5, created on 2018-11-03 20:16:57
   from '/var/www/html/gespol/smarty/templates/compartido/cabecera.html' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-5',
-  'unifunc' => 'content_5bddffd903cc68_30663261',
+  'unifunc' => 'content_5bde02395a0b40_60440890',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '7eb516ce02567e3cef2ee9adba72756b668a804c' => 
     array (
       0 => '/var/www/html/gespol/smarty/templates/compartido/cabecera.html',
-      1 => 1541275605,
+      1 => 1541276214,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5bddffd903cc68_30663261 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5bde02395a0b40_60440890 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!-- Site wrapper -->
 <div class="wrapper">
 
@@ -289,38 +289,26 @@ function content_5bddffd903cc68_30663261 (Smarty_Internal_Template $_smarty_tpl)
                     <!-- User Account -->
                     <li class="dropdown user user-menu">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                            <img src="images/user5-128x128.jpg" class="user-image rounded-circle" alt="User Image">
+                            <img src="img/users/anonymous.png" class="user-image rounded-circle" alt="User Image">
                         </a>
                         <ul class="dropdown-menu scale-up">
                             <!-- User image -->
                             <li class="user-header">
-                                <img src="images/user5-128x128.jpg" class="float-left rounded-circle" alt="User Image">
+                                <img src="img/users/anonymous.png" class="float-left rounded-circle" alt="User Image">
 
                                 <p>
-                                    Romi Roy
-                                    <small class="mb-5">jb@gmail.com</small>
-                                    <a href="#" class="btn btn-danger btn-sm btn-rounded">View Profile</a>
+                                    <?php echo $_smarty_tpl->tpl_vars['usuario_nombre']->value;?>
+
+                                    <small class="mb-5"><?php echo $_smarty_tpl->tpl_vars['usuario_tip']->value;?>
+</small>
                                 </p>
                             </li>
                             <!-- Menu Body -->
                             <li class="user-body">
                                 <div class="row no-gutters">
-                                    <div class="col-12 text-left">
-                                        <a href="#"><i class="ion ion-person"></i> My Profile</a>
-                                    </div>
-                                    <div class="col-12 text-left">
-                                        <a href="#"><i class="ion ion-email-unread"></i> Inbox</a>
-                                    </div>
-                                    <div class="col-12 text-left">
-                                        <a href="#"><i class="ion ion-settings"></i> Setting</a>
-                                    </div>
                                     <div role="separator" class="divider col-12"></div>
                                     <div class="col-12 text-left">
-                                        <a href="#"><i class="ti-settings"></i> Account Setting</a>
-                                    </div>
-                                    <div role="separator" class="divider col-12"></div>
-                                    <div class="col-12 text-left">
-                                        <a href="#"><i class="fa fa-power-off"></i> Logout</a>
+                                        <a href="#"><i class="fa fa-power-off"></i> Salir</a>
                                     </div>
                                 </div>
                                 <!-- /.row -->
