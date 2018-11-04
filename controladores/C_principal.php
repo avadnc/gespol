@@ -1,5 +1,7 @@
 <?php
-
+// =============================================================================
+// Controlador principal para la carga de la página y carga de Smarty
+// =============================================================================
 require($_SERVER['DOCUMENT_ROOT'] . '/gespol/smarty/SmartyBC.class.php');
 
 class C_principal extends SmartyBC
