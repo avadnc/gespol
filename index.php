@@ -5,6 +5,7 @@ require_once 'controladores/C_principal.php';
 $plantilla = new C_principal;
 
 $plantilla->assign(array(
+    'aplicación' => 'Gestion Prefectura Policial',
     'const_prefectura' => 'Comisaria Temporal',
     'usuario_nombre' => 'Usuario Temporal',
     'usuario_tip' => 'PL001'
