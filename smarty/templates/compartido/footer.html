@@ -1,22 +1,12 @@
 </div>
 <!-- /.content-wrapper -->
-<!-- jQuery 3 -->
-<script src="assets/vendor_components/jquery/dist/jquery.min.js"></script>
 
-<!-- popper -->
-<script src="assets/vendor_components/popper/dist/popper.min.js"></script>
+{foreach from=$js item=i key=k}
 
-<!-- Bootstrap 4.0-->
-<script src="assets/vendor_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<!--{$k}-->
+<script src="{$i}"></script>
 
-<!-- SlimScroll -->
-<script src="assets/vendor_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
-
-<!-- FastClick -->
-<script src="assets/vendor_components/fastclick/lib/fastclick.js"></script>
-
-<!-- Unique_Admin App -->
-<script src="js/template.js"></script>
+{/foreach}
 
 </body>
 

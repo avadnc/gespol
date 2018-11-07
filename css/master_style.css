@@ -13438,7 +13438,7 @@ table.dataTable thead .sorting:after {
 /*lockscreen*/
 
 .lockscreen {
-    background: url(../../images/login-register.jpg) center center no-repeat #d2d6de;
+    background: url(../img/fondo.jpg) center center no-repeat #d2d6de;
     background-size: cover;
     height: 100%;
     width: 100%;
@@ -13522,7 +13522,7 @@ table.dataTable thead .sorting:after {
 
 .login-page,
 .register-page {
-    background: url(../../images/login-register.jpg) center center no-repeat #d2d6de;
+    background: url(../img/fondo.jpg) center center no-repeat #d2d6de;
     background-size: cover;
     height: 100%;
     width: 100%;
