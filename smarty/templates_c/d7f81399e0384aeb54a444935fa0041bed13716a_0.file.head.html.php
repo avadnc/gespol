@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-5, created on 2018-11-07 18:13:15
+/* Smarty version 3.1.34-dev-5, created on 2018-11-08 00:14:20
   from '/var/www/html/gespol/smarty/templates/compartido/head.html' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-5',
-  'unifunc' => 'content_5be32b3b3ec435_18152287',
+  'unifunc' => 'content_5be37fdcc8bef4_00872118',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'd7f81399e0384aeb54a444935fa0041bed13716a' => 
     array (
       0 => '/var/www/html/gespol/smarty/templates/compartido/head.html',
-      1 => 1541609270,
+      1 => 1541635891,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5be32b3b3ec435_18152287 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5be37fdcc8bef4_00872118 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 
@@ -46,6 +46,9 @@ function content_5be32b3b3ec435_18152287 (Smarty_Internal_Template $_smarty_tpl)
 
     <!-- Unique_Admin skins -->
     <link rel="stylesheet" href="css/skins/_all-skins.css">
+    <!--Data tables responsive-->
+    <link rel="stylesheet" href="css/dataTables.bootstrap.min.css">
+    <link rel="stylesheet" href="css/responsive.bootstrap.min.css">
 
 </head>
 

@@ -4,13 +4,13 @@
             <div class="col-lg-4 col-md-8 col-12">
                 <div class="box box-body rounded">
                     <h3 class="login-box-msg">Entrar al Sistema</h3>
-                    <form action="" method="post">
+                    <form method="post">
                         <div class="form-group has-feedback">
-                            <input type="text" class="form-control" placeholder="Usuario">
+                            <input type="text" class="form-control" name="ingUsuario" placeholder="Usuario">
                             <span class="ion ion-person form-control-feedback"></span>
                         </div>
                         <div class="form-group has-feedback">
-                            <input type="password" class="form-control" placeholder="Password">
+                            <input type="password" class="form-control" name="ingPassword" placeholder="Password">
                             <span class="ion ion-locked form-control-feedback"></span>
                         </div>
                         <!-- /.col -->
@@ -19,6 +19,7 @@
                         </div>
                         <!-- /.col -->
                 </div>
+                {php} $login = new ControladorUsuarios(); $login->ctrIngresoUsuario(); {/php}
                 </form>
             </div>
         </div>

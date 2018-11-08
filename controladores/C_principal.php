@@ -27,31 +27,19 @@ class C_principal extends SmartyBC
             'usuario_tip' => 'PL001'
         ));
 
+
         if (isset($_SESSION['iniciarSesion']) && $_SESSION['iniciarSesion'] == 'ok') {
-        
+
+
             $plantilla->assign(array(
                 'css' => 'hold-transition skin-blue sidebar-mini sidebar-collapse',
-                'js' => array(
-                    'jquery' => 'assets/vendor_components/jquery/dist/jquery.min.js',
-                    'popper' => 'assets/vendor_components/popper/dist/popper.min.js',
-                    'bootstrap' => 'assets/vendor_components/bootstrap/dist/js/bootstrap.min.js',
-                    'DataTables' => 'assets/vendor_components/datatables.net/js/jquery.dataTables.min.js',
-                    'DataTables-bs' => 'assets/vendor_components/datatables.net-bs/js/dataTables.bootstrap.min.js',
-                    'DataTables2' => 'assets/vendor_plugins/DataTables-1.10.15/media/js/jquery.dataTables.min.js',
-                    'DataTables3' => 'assets/vendor_plugins/DataTables-1.10.15/extensions/Buttons/js/dataTables.buttons.min.js',
-                    'DataTables4' => 'assets/vendor_plugins/DataTables-1.10.15/extensions/Buttons/js/buttons.flash.min.js',
-                    'DataTables5' => 'assets/vendor_plugins/DataTables-1.10.15/ex-js/jszip.min.js',
-                    'DataTables6' => 'assets/vendor_plugins/DataTables-1.10.15/ex-js/pdfmake.min.js',
-                    'DataTables7' => 'assets/vendor_plugins/DataTables-1.10.15/ex-js/vfs_fonts.js',
-                    'DataTables8' => 'assets/vendor_plugins/DataTables-1.10.15/extensions/Buttons/js/buttons.html5.min.js',
-                    'DataTables9' => 'assets/vendor_plugins/DataTables-1.10.15/extensions/Buttons/js/buttons.print.min.js'
-                )
+                'js' => estilosPagina::cargarJs()
             ));
-        
-            switch (isset($_GET['pol'])) {
-        
+
+            switch ($_GET['pol']) {
+
                 case 'inicio':
-        
+
                     $plantilla->display('compartido/head.html');
                     $plantilla->display('compartido/cabecera.html');
                     $plantilla->display('compartido/menulateral.html');
@@ -59,9 +47,16 @@ class C_principal extends SmartyBC
                     $plantilla->display('compartido/piepagina.html');
                     $plantilla->display('compartido/footer.html');
                     break;
-        
+
                 case 'usuarios':
-        
+
+                    $usuarios = array(
+                        'usuario' => ModeloUsuarios::MdlObtenerUsuarios('usuarios')
+                    );
+                   
+                    // var_dump($usuarios);
+                    $plantilla->assign($usuarios);
+
                     $plantilla->display('compartido/head.html');
                     $plantilla->display('compartido/cabecera.html');
                     $plantilla->display('compartido/menulateral.html');
@@ -69,9 +64,15 @@ class C_principal extends SmartyBC
                     $plantilla->display('compartido/piepagina.html');
                     $plantilla->display('compartido/footer.html');
                     break;
-        
+
+                case 'salir':
+
+                    session_destroy();
+                    echo '<script> window.location = "inicio"; </script>';
+                    break;
+
                 default:
-        
+
                     $plantilla->display('compartido/head.html');
                     $plantilla->display('compartido/cabecera.html');
                     $plantilla->display('compartido/menulateral.html');
@@ -79,9 +80,9 @@ class C_principal extends SmartyBC
                     $plantilla->display('compartido/piepagina.html');
                     $plantilla->display('compartido/footer.html');
                     break;
-        
+
             }
-        
+
         } else {
             $plantilla->assign(array(
                 'css' => 'hold-transition login-page',
@@ -89,9 +90,9 @@ class C_principal extends SmartyBC
                     'jquery' => 'assets/vendor_components/jquery/dist/jquery.min.js',
                     'popper' => 'assets/vendor_components/popper/dist/popper.min.js',
                     'bootstrap' => 'assets/vendor_components/bootstrap/dist/js/bootstrap.min.js'
-                    )
+                )
             ));
-            
+
             $plantilla->display('compartido/head.html');
             $plantilla->display('login.html');
             $plantilla->display('compartido/footer.html');

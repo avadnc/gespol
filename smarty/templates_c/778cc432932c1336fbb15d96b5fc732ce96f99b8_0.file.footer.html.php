@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.34-dev-5, created on 2018-11-07 18:13:15
+/* Smarty version 3.1.34-dev-5, created on 2018-11-08 00:07:00
   from '/var/www/html/gespol/smarty/templates/compartido/footer.html' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-5',
-  'unifunc' => 'content_5be32b3b3f4961_02985930',
+  'unifunc' => 'content_5be37e24b4d818_64661798',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5be32b3b3f4961_02985930 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5be37e24b4d818_64661798 (Smarty_Internal_Template $_smarty_tpl) {
 ?></div>
 <!-- /.content-wrapper -->
 

@@ -1,4 +1,27 @@
-<!-- Content Wrapper. Contains page content -->
+<?php
+/* Smarty version 3.1.34-dev-5, created on 2018-11-08 00:43:40
+  from '/var/www/html/gespol/smarty/templates/usuarios.html' */
+
+/* @var Smarty_Internal_Template $_smarty_tpl */
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
+  'version' => '3.1.34-dev-5',
+  'unifunc' => 'content_5be386bccffee2_59559637',
+  'has_nocache_code' => false,
+  'file_dependency' => 
+  array (
+    'c4ad95a03cf70ca16eb2789ced1ab58e2fe3935a' => 
+    array (
+      0 => '/var/www/html/gespol/smarty/templates/usuarios.html',
+      1 => 1541637811,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+  ),
+),false)) {
+function content_5be386bccffee2_59559637 (Smarty_Internal_Template $_smarty_tpl) {
+?><!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
@@ -36,21 +59,28 @@
                             </tr>
                         </thead>
                         <tbody>
-                            {foreach from=$usuario item=i}
+                            <?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['usuario']->value, 'i');
+if ($_from !== null) {
+foreach ($_from as $_smarty_tpl->tpl_vars['i']->value) {
+?>
                             <tr>
-                                <td>{$i.id}</td>
+                                <td><?php echo $_smarty_tpl->tpl_vars['i']->value['id'];?>
+</td>
                                 <td>AQUI VA EL NOMBRE</td>
-                                <td>{$i.usuario}</td>
-                                <td>{if $i.estado eq "1"}
-                                    <span class="label label-success ">Activo</span> {else}
-                                    <span class="label label-warning ">Inactivo</span> {/if}
+                                <td><?php echo $_smarty_tpl->tpl_vars['i']->value['usuario'];?>
+</td>
+                                <td><?php if ($_smarty_tpl->tpl_vars['i']->value['estado'] == "1") {?>
+                                    <span class="label label-success ">Activo</span> <?php } else { ?>
+                                    <span class="label label-warning ">Inactivo</span> <?php }?>
                                 </td>
-                                <td>{if $i.foto eq ""}
-                                    <img src="img/users/anonymous.png " class="img-thumbnail " width="50px "> {else}
+                                <td><?php if ($_smarty_tpl->tpl_vars['i']->value['foto'] == '') {?>
+                                    <img src="img/users/anonymous.png " class="img-thumbnail " width="50px "> <?php } else { ?>
                                     <!--Aqui va la foto-->
-                                    {/if}
+                                    <?php }?>
                                 </td>
-                                <td>{$i.ultimoLogin}</td>
+                                <td><?php echo $_smarty_tpl->tpl_vars['i']->value['ultimoLogin'];?>
+</td>
                                 <td>
                                     <div class="form-group ">
                                         <button class="btn btn-xs btn-warning ">
@@ -65,7 +95,10 @@
                                     </div>
                                 </td>
                             </tr>
-                            {/foreach}
+                            <?php
+}
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                         </tbody>
                     </table>
                 </div>
@@ -98,4 +131,5 @@
     </div>
     <!-- /.modal-dialog -->
 </div>
-<!-- /.modal -->
+<!-- /.modal --><?php }
+}

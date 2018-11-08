@@ -1,4 +1,27 @@
-<!-- Site wrapper -->
+<?php
+/* Smarty version 3.1.34-dev-5, created on 2018-11-08 00:07:00
+  from '/var/www/html/gespol/smarty/templates/compartido/cabecera.html' */
+
+/* @var Smarty_Internal_Template $_smarty_tpl */
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
+  'version' => '3.1.34-dev-5',
+  'unifunc' => 'content_5be37e24b1ea09_90743704',
+  'has_nocache_code' => false,
+  'file_dependency' => 
+  array (
+    '7eb516ce02567e3cef2ee9adba72756b668a804c' => 
+    array (
+      0 => '/var/www/html/gespol/smarty/templates/compartido/cabecera.html',
+      1 => 1541620590,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+  ),
+),false)) {
+function content_5be37e24b1ea09_90743704 (Smarty_Internal_Template $_smarty_tpl) {
+?><!-- Site wrapper -->
 <div class="wrapper">
 
     <header class="main-header">
@@ -274,8 +297,10 @@
                                 <img src="img/users/anonymous.png" class="float-left rounded-circle" alt="User Image">
 
                                 <p>
-                                    {$usuario_nombre}
-                                    <small class="mb-5">{$usuario_tip}</small>
+                                    <?php echo $_smarty_tpl->tpl_vars['usuario_nombre']->value;?>
+
+                                    <small class="mb-5"><?php echo $_smarty_tpl->tpl_vars['usuario_tip']->value;?>
+</small>
                                 </p>
                             </li>
                             <!-- Menu Body -->
@@ -293,4 +318,5 @@
                 </ul>
             </div>
         </nav>
-    </header>
+    </header><?php }
+}
