@@ -65,6 +65,15 @@ class C_principal extends SmartyBC
                     $plantilla->display('compartido/footer.html');
                     break;
 
+                case 'novedades':
+                    $plantilla->display('compartido/head.html');
+                    $plantilla->display('compartido/cabecera.html');
+                    $plantilla->display('compartido/menulateral.html');
+                    $plantilla->display('sc/novedades.html');
+                    $plantilla->display('compartido/piepagina.html');
+                    $plantilla->display('compartido/footer.html');
+                    break;
+
                 case 'salir':
 
                     session_destroy();

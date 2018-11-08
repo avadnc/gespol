@@ -24,7 +24,12 @@
     <link rel="stylesheet" href="css/skins/_all-skins.css">
     <!--Data tables responsive-->
     <link rel="stylesheet" href="css/dataTables.bootstrap.min.css">
-    <link rel="stylesheet" href="css/responsive.bootstrap.min.css">
+    <link rel="stylesheet" href="css/responsive.bootstrap.min.css"> {foreach from=$js item=i key=k}
+
+    <!--{$k}-->
+    <script src="{$i}"></script>
+
+    {/foreach}
 
 </head>
 

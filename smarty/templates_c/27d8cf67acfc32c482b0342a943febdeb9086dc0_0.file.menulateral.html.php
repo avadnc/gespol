@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-5, created on 2018-11-08 00:07:00
+/* Smarty version 3.1.34-dev-5, created on 2018-11-08 05:05:34
   from '/var/www/html/gespol/smarty/templates/compartido/menulateral.html' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-5',
-  'unifunc' => 'content_5be37e24b24865_47898646',
+  'unifunc' => 'content_5be3c41e0f64b9_35693526',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '27d8cf67acfc32c482b0342a943febdeb9086dc0' => 
     array (
       0 => '/var/www/html/gespol/smarty/templates/compartido/menulateral.html',
-      1 => 1541607209,
+      1 => 1541653531,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5be37e24b24865_47898646 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5be3c41e0f64b9_35693526 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!-- Left side column. contains the sidebar -->
 <aside class="main-sidebar">
     <!-- sidebar -->
@@ -59,6 +59,14 @@ function content_5be37e24b24865_47898646 (Smarty_Internal_Template $_smarty_tpl)
             <li>
                 <a href="usuarios">
                     <i class="fa fa-users"></i> <span>Usuarios</span>
+                    <span class="pull-right-container"></span>
+                </a>
+            </li>
+            <li class="nav-devider"></li>
+            <li class="header nav-small-cap">Seguridad Ciudadana</li>
+            <li>
+                <a href="novedades">
+                    <i class="fa fa-book"></i> <span>Novedades</span>
                     <span class="pull-right-container"></span>
                 </a>
             </li>

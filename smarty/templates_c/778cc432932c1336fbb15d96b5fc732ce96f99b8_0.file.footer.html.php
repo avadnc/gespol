@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-5, created on 2018-11-08 00:07:00
+/* Smarty version 3.1.34-dev-5, created on 2018-11-08 05:11:58
   from '/var/www/html/gespol/smarty/templates/compartido/footer.html' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-5',
-  'unifunc' => 'content_5be37e24b4d818_64661798',
+  'unifunc' => 'content_5be3c59eea8dd2_88247594',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '778cc432932c1336fbb15d96b5fc732ce96f99b8' => 
     array (
       0 => '/var/www/html/gespol/smarty/templates/compartido/footer.html',
-      1 => 1541612705,
+      1 => 1541653889,
       2 => 'file',
     ),
   ),
@@ -20,27 +20,9 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5be37e24b4d818_64661798 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5be3c59eea8dd2_88247594 (Smarty_Internal_Template $_smarty_tpl) {
 ?></div>
 <!-- /.content-wrapper -->
-
-<?php
-$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['js']->value, 'i', false, 'k');
-if ($_from !== null) {
-foreach ($_from as $_smarty_tpl->tpl_vars['k']->value => $_smarty_tpl->tpl_vars['i']->value) {
-?>
-
-<!--<?php echo $_smarty_tpl->tpl_vars['k']->value;?>
--->
-<?php echo '<script'; ?>
- src="<?php echo $_smarty_tpl->tpl_vars['i']->value;?>
-"><?php echo '</script'; ?>
->
-
-<?php
-}
-}
-$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 
 </body>
 
