@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-5, created on 2018-11-08 05:10:35
+/* Smarty version 3.1.34-dev-5, created on 2018-11-08 16:09:08
   from '/var/www/html/gespol/smarty/templates/sc/novedades.html' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-5',
-  'unifunc' => 'content_5be3c54b0d1ee1_98682926',
+  'unifunc' => 'content_5be45fa4547781_02770339',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '93a8ab3f487ade1a3ebf75cb0ccfda414c7c6906' => 
     array (
       0 => '/var/www/html/gespol/smarty/templates/sc/novedades.html',
-      1 => 1541653830,
+      1 => 1541693344,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5be3c54b0d1ee1_98682926 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5be45fa4547781_02770339 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->
@@ -51,13 +51,12 @@ function content_5be3c54b0d1ee1_98682926 (Smarty_Internal_Template $_smarty_tpl)
                                 <thead>
                                     <tr class="bg-gray">
                                         <th></th>
-                                        <th>Projects</th>
-                                        <th><i class="fa fa-fw fa-user text-muted hidden-md hidden-sm hidden-xs"></i> EST</th>
-                                        <th>Contacts</th>
-                                        <th>Status</th>
-                                        <th><i class="fa fa-fw fa-calendar text-muted hidden-md hidden-sm hidden-xs"></i> Starts</th>
-                                        <th><i class="fa fa-fw fa-calendar text-muted hidden-md hidden-sm hidden-xs"></i> Ends</th>
-                                        <th>Tracker</th>
+                                        <th>Novedades</th>
+                                        <th><i class="fa fa-fw fa-user text-muted hidden-md hidden-sm hidden-xs"></i> Tiempo</th>
+                                        <th>Requiriente</th>
+                                        <th>Estado</th>
+                                        <th><i class="fa fa-fw fa-calendar text-muted hidden-md hidden-sm hidden-xs"></i> Hora Inicio</th>
+                                        <th><i class="fa fa-fw fa-calendar text-muted hidden-md hidden-sm hidden-xs"></i> Hora Resolucion</th>
                                     </tr>
                                 </thead>
                             </table>
@@ -82,6 +81,31 @@ function content_5be3c54b0d1ee1_98682926 (Smarty_Internal_Template $_smarty_tpl)
         $(document).ready(function() {
 
             var table = $('#tabla-novedades').DataTable({
+                'language': {
+
+                    'sProcessing': 'Procesando',
+                    'sLengthMenu': 'Mostrar _MENU_ registros',
+                    'zeroRecords': 'No se encontraron registros',
+                    'sEmptyTable': 'Ningún dato disponible en esta tabla',
+                    'sInfo': 'Mostrando registros del _START_ al _END_ de un total de _TOTAL_',
+                    'sInfoEmpty': 'Mostrando registros del 0 al 0 de un total de 0',
+                    'sInfoFiltered': '(filtrado un total de _MAX_ registros)',
+                    'sInfoPostFix': '',
+                    'sSearch': 'Buscar:',
+                    'sUrl': '',
+                    'sInfoThousands': ',',
+                    'sLoadingRecords': 'Cargando...',
+                    'oPaginate': {
+                        'sFirst': 'Primero',
+                        'sLast': 'Último',
+                        'sNext': 'Siguiente',
+                        'sPrevious': 'Anterior'
+                    },
+                    'oAria': {
+                        'sSortAscending': ': Activar para odernar la columna de manera ascendente',
+                        'sSortDescending': 'Activar para ordenar la columna de manera descendente'
+                    }
+                },
                 "data": testdata.data,
                 "searching": true,
                 "paging": true,
@@ -97,19 +121,17 @@ function content_5be3c54b0d1ee1_98682926 (Smarty_Internal_Template $_smarty_tpl)
                         },
                         width: "15px"
                     }, {
-                        "data": "name"
+                        "data": "novedad"
                     }, {
-                        "data": "est"
+                        "data": "tiempo"
                     }, {
-                        "data": "contacts"
+                        "data": "requiriente"
                     }, {
-                        "data": "status"
+                        "data": "estado"
                     }, {
-                        "data": "starts"
+                        "data": "hinicio"
                     }, {
-                        "data": "ends"
-                    }, {
-                        "data": "tracker"
+                        "data": "hfin"
                     },
 
                 ],
@@ -151,183 +173,101 @@ function content_5be3c54b0d1ee1_98682926 (Smarty_Internal_Template $_smarty_tpl)
             // `d` is the original data object for the row
             return '<table cellpadding="6" cellspacing="0" border="0" style="padding-left:50px; width:100%;">' +
                 '<tr>' +
-                '<td style="width:100px">Project Title:</td>' +
-                '<td>' + d.name + '</td>' +
+                '<td style="width:100px">Requiriente:</td>' +
+                '<td>' + d.requiriente + '</td>' +
                 '</tr>' +
                 '<tr>' +
-                '<td>Deadline:</td>' +
-                '<td>' + d.ends + '</td>' +
+                '<td>Telefono:</td>' +
+                '<td>' + d.telefono + '</td>' +
                 '</tr>' +
                 '<tr>' +
-                '<td>Extra info:</td>' +
-                '<td>And any further details here (images etc)...</td>' +
+                '<td>Lugar del Incidente:</td>' +
+                '<td>' + d.direccion + '</td>' +
                 '</tr>' +
                 '<tr>' +
-                '<td>Comments:</td>' +
-                '<td>' + d.comments + '</td>' +
+                '<td>Acciones:</td>' +
+                '<td>' + d.acciones + '</td>' +
                 '</tr>' +
                 '<tr>' +
-                '<td>Action:</td>' +
-                '<td>' + d.action + '</td>' +
+                '<td>Resolucion:</td>' +
+                '<td>' + d.resolucion + '</td>' +
                 '</tr>' +
                 '</table>';
         }
 
         var testdata = {
             "data": [{
-                "name": "Sharepoint Upgrade<br><small class='text-muted'><i>Budget: 5,000<i></small>",
-                "est": "<td><div class='progress progress-sm'><div class='progress-bar progress-bar-info progress-bar-striped' role='progressbar' aria-valuenow='60' aria-valuemin='0' aria-valuemax='100' style='width: 60%'></div></div></td>",
-                "contacts": "<div class='project-members'><a href='javascript:void(0)'><img src='../../../images/avatar/1.jpg' class='offline' alt='user'></a> </div> ",
-                "status": "<span class='badge badge-success'>Active</span>",
-                "tracker": "<button type='button' class='btn btn-sm btn-toggle btn-primary active' data-toggle='button' aria-pressed='true'><span class='handle'></span></button>",
-                "starts": "01-21-2017",
-                "ends": "<strong>02-30-2018</strong>",
-                "comments": "This is a blank comments area, used to add comments and keep notes",
-                "action": "<button class='btn btn-xs'>Open case</button> <button class='btn btn-xs btn-danger pull-right' style='margin-left:5px'>Delete Record</button> <button class='btn btn-xs btn-success pull-right'>Save Changes</button> "
-            }, {
-                "name": "IT Room Renovation<br><small class='text-muted'><i>Budget: 25,000<i></small>",
-                "est": "<td><div class='progress progress-sm'><div class='progress-bar progress-bar-success progress-bar-striped' role='progressbar' aria-valuenow='30' aria-valuemin='0' aria-valuemax='100' style='width: 30%'></div></div></td>",
-                "contacts": "<div class='project-members'><a href='javascript:void(0)'><img src='../../../images/avatar/2.jpg' class='online'></a> <a href='javascript:void(0)'><img src='../../../images/avatar/4.jpg' class='busy'></a><a href='javascript:void(0)'><img src='../../../images/avatar/3.jpg' class='away'></a> </div> ",
-                "status": "<span class='badge badge-success'>Active</span>",
-                "tracker": "<button type='button' class='btn btn-sm btn-toggle btn-primary' data-toggle='button' aria-pressed='true'><span class='handle'></span></button>",
-                "starts": "01-17-2017",
-                "ends": "<strong>02-30-2018</strong>",
-                "comments": "This is a blank comments area, used to add comments and keep notes",
-                "action": "<button class='btn btn-xs'>Open case</button> <button class='btn btn-xs btn-danger pull-right' style='margin-left:5px'>Delete Record</button> <button class='btn btn-xs btn-success pull-right'>Save Changes</button> "
-            }, {
-                "name": "Car Industry Studies<br><small class='text-muted'><i>Budget: 1,000<i></small>",
-                "est": "<td><div class='progress progress-sm'><div class='progress-bar progress-bar-primary progress-bar-striped' role='progressbar' aria-valuenow='55' aria-valuemin='0' aria-valuemax='100' style='width: 55%'></div></div></td>",
-                "contacts": "<div class='project-members'><a href='javascript:void(0)'><img src='../../../images/avatar/1.jpg' class='online' alt='user'></a><a href='javascript:void(0)'><img src='../../../images/avatar/2.jpg' class='online'></a> <a href='javascript:void(0)'><img src='../../../images/avatar/3.jpg' class='busy'></a><a href='javascript:void(0)'><img src='../../../images/avatar/4.jpg' class='away'></a> </div> ",
-                "status": "<span class='badge badge-success'>Active</span>",
-                "tracker": "<button type='button' class='btn btn-sm btn-toggle btn-primary active' data-toggle='button' aria-pressed='true'><span class='handle'></span></button>",
-                "starts": "01-8-2017",
-                "ends": "<strong>03-03-2018</strong>",
-                "comments": "This is a blank comments area, used to add comments and keep notes",
-                "action": "<button class='btn btn-xs'>Open case</button> <button class='btn btn-xs btn-danger pull-right' style='margin-left:5px'>Delete Record</button> <button class='btn btn-xs btn-success pull-right'>Save Changes</button> "
-            }, {
-                "name": "Update all forms <br><small class='text-muted'><i>Budget: 2,000<i></small>",
-                "est": "<td><div class='progress progress-sm'><div class='progress-bar progress-bar-warning progress-bar-striped' role='progressbar' aria-valuenow='68' aria-valuemin='0' aria-valuemax='100' style='width: 68%'></div></div></td>",
-                "contacts": "<div class='project-members'><a href='javascript:void(0)'><img src='../../../images/avatar/5.jpg' class='busy'></a> </div> ",
-                "status": "<span class='badge badge-success'>Active</span>",
-                "tracker": "<button type='button' class='btn btn-sm btn-toggle btn-primary' data-toggle='button' aria-pressed='true'><span class='handle'></span></button>",
-                "starts": "01-12-2017",
-                "ends": "<strong>03-15-2018</strong>",
-                "comments": "This is a blank comments area, used to add comments and keep notes",
-                "action": "<button class='btn btn-xs'>Open case</button> <button class='btn btn-xs btn-danger pull-right' style='margin-left:5px'>Delete Record</button> <button class='btn btn-xs btn-success pull-right'>Save Changes</button> "
-            }, {
-                "name": "Preliminary studies of client intel<br><small class='text-muted'><i>Budget: 3,500<i></small>",
-                "est": "<td><div class='progress progress-sm'><div class='progress-bar progress-bar-danger progress-bar-striped' role='progressbar' aria-valuenow='10' aria-valuemin='0' aria-valuemax='100' style='width: 10%'></div></div></td>",
-                "contacts": "<div class='project-members'><a href='javascript:void(0)'><img src='../../../images/avatar/6.jpg' class='online'></a> <a href='javascript:void(0)'><img src='../../../images/avatar/3.jpg' class='busy'></a></div> ",
-                "status": "<span class='badge badge-success'>Active</span>",
-                "tracker": "<button type='button' class='btn btn-sm btn-toggle btn-primary' data-toggle='button' aria-pressed='true'><span class='handle'></span></button>",
-                "starts": "01-13-2017",
-                "ends": "<strong>06-20-2018</strong>",
-                "comments": "This is a blank comments area, used to add comments and keep notes",
-                "action": "<button class='btn btn-xs'>Open case</button> <button class='btn btn-xs btn-danger pull-right' style='margin-left:5px'>Delete Record</button> <button class='btn btn-xs btn-success pull-right'>Save Changes</button> "
-            }, {
-                "name": "AngularJS UI design and development<br><small class='text-muted'><i>Budget: 5,000<i></small>",
-                "est": "<td><div class='progress progress-sm'><div class='progress-bar progress-bar-info progress-bar-striped' role='progressbar' aria-valuenow='15' aria-valuemin='0' aria-valuemax='100' style='width: 15%'></div></div></td>",
-                "contacts": "<div class='project-members'><a href='javascript:void(0)'><a href='javascript:void(0)'><img src='../../../images/avatar/1.jpg' class='away'></a><a href='javascript:void(0)'><img src='../../../images/avatar/5.jpg' class='away'></a> </div> ",
-                "status": "<span class='badge badge-success'>Active</span>",
-                "tracker": "<button type='button' class='btn btn-sm btn-toggle btn-primary active' data-toggle='button' aria-pressed='true'><span class='handle'></span></button>",
-                "starts": "01-9-2017",
-                "ends": "<strong>08-01-2018</strong>",
-                "comments": "This is a blank comments area, used to add comments and keep notes",
-                "action": "<button class='btn btn-xs'>Open case</button> <button class='btn btn-xs btn-danger pull-right' style='margin-left:5px'>Delete Record</button> <button class='btn btn-xs btn-success pull-right'>Save Changes</button> "
-            }, {
-                "name": "<strong>Phase 1</strong>: Modual implimentations<br><small class='text-muted'><i>Budget: 7,000<i></small>",
-                "est": "<td><div class='progress progress-sm'><div class='progress-bar progress-bar-primary progress-bar-striped' role='progressbar' aria-valuenow='100' aria-valuemin='0' aria-valuemax='100' style='width: 100%'></div></div></td>",
-                "contacts": "<div class='project-members'><a href='javascript:void(0)'><img src='../../../images/avatar/4.jpg' class='online' alt='user'></a></div> ",
-                "status": "<span class='badge badge-default'>Inactive</span>",
-                "tracker": "<button type='button' class='btn btn-sm btn-toggle btn-primary' data-toggle='button' aria-pressed='true'><span class='handle'></span></button>",
-                "starts": "01-4-2017",
-                "ends": "<strong>09-11-2019</strong>",
-                "comments": "This is a blank comments area, used to add comments and keep notes",
-                "action": "<button class='btn btn-xs'>Open case</button> <button class='btn btn-xs btn-danger pull-right' style='margin-left:5px'>Delete Record</button> <button class='btn btn-xs btn-success pull-right'>Save Changes</button> "
-            }, {
-                "name": "<strong>Phase 2</strong>: Beta testing<br><small class='text-muted'><i>No budget was locked in<i></small>",
-                "est": "<td><div class='progress progress-sm'><div class='progress-bar progress-bar-success progress-bar-striped' role='progressbar' aria-valuenow='15' aria-valuemin='0' aria-valuemax='100' style='width: 15%'></div></div></td>",
-                "contacts": "<div class='project-members'><a href='javascript:void(0)'><img src='../../../images/avatar/2.jpg' class='offline'></a> </div> ",
-                "status": "<span class='badge badge-success'>Active</span>",
-                "tracker": "<button type='button' class='btn btn-sm btn-toggle btn-primary' data-toggle='button' aria-pressed='true'><span class='handle'></span></button>",
-                "starts": "01-11-2017",
-                "ends": "<strong>07-11-2018</strong>",
-                "comments": "This is a blank comments area, used to add comments and keep notes",
-                "action": "<button class='btn btn-xs'>Open case</button> <button class='btn btn-xs btn-danger pull-right' style='margin-left:5px'>Delete Record</button> <button class='btn btn-xs btn-success pull-right'>Save Changes</button> "
-            }, {
-                "name": "<strong>Phase 3</strong>: Deploy to management<br><small class='text-muted'><i>No budget was locked in<i></small>",
-                "est": "<td><div class='progress progress-sm'><div class='progress-bar progress-bar-warning progress-bar-striped' role='progressbar' aria-valuenow='10' aria-valuemin='0' aria-valuemax='100' style='width: 10%'></div></div></td>",
-                "contacts": "<div class='project-members'><a href='javascript:void(0)'><img src='../../../images/avatar/1.jpg' class='offline'></a> <a href='javascript:void(0)'><img src='../../../images/avatar/2.jpg' class='busy'></a><a href='javascript:void(0)'><img src='../../../images/avatar/3.jpg' class='away'></a><a href='javascript:void(0)'><img src='../../../images/avatar/4.jpg' class='online' alt='user'></a><a href='javascript:void(0)'><img src='../../../images/avatar/5.jpg' class='online' alt='user'></a> </div> ",
-                "status": "<span class='badge badge-success'>Active</span>",
-                "tracker": "<button type='button' class='btn btn-sm btn-toggle btn-primary' data-toggle='button' aria-pressed='true'><span class='handle'></span></button>",
-                "starts": "01-19-2017",
-                "ends": "08-30-2018",
-                "comments": "This is a blank comments area, used to add comments and keep notes",
-                "action": "<button class='btn btn-xs'>Open case</button> <button class='btn btn-xs btn-danger pull-right' style='margin-left:5px'>Delete Record</button> <button class='btn btn-xs btn-success pull-right'>Save Changes</button> "
-            }, {
-                "name": "Prepare property management contracts<br><small class='text-muted'><i>No budget was locked in<i></small>",
-                "est": "<td><div class='progress progress-sm'><div class='progress-bar progress-bar-primary progress-bar-striped' role='progressbar' aria-valuenow='55' aria-valuemin='0' aria-valuemax='100' style='width: 55%'></div></div></td>",
-                "contacts": "<div class='project-members'><a href='javascript:void(0)'><img src='../../../images/avatar/8.jpg' class='online'></a></div> ",
-                "status": "<span class='badge badge-success'>Active</span>",
-                "tracker": "<button type='button' class='btn btn-sm btn-toggle btn-primary' data-toggle='button' aria-pressed='true'><span class='handle'></span></button>",
-                "starts": "01-20-2017",
-                "ends": "<strong>02-30-2018</strong>",
-                "comments": "This is a blank comments area, used to add comments and keep notes",
-                "action": "<button class='btn btn-xs'>Open case</button> <button class='btn btn-xs btn-danger pull-right' style='margin-left:5px'>Delete Record</button> <button class='btn btn-xs btn-success pull-right'>Save Changes</button> "
-            }, {
-                "name": "Brick factory<br><small class='text-muted'><i>Budget: 1,000<i></small>",
-                "est": "<td><div class='progress progress-sm'><div class='progress-bar progress-bar-info progress-bar-striped' role='progressbar' aria-valuenow='775' aria-valuemin='0' aria-valuemax='100' style='width: 75%'></div></div></td>",
-                "contacts": "<div class='project-members'><a href='javascript:void(0)'><img src='../../../images/avatar/7.jpg' class='online'></a> <a href='javascript:void(0)'><img src='../../../images/avatar/3.jpg' class='busy'></a><a href='javascript:void(0)'><img src='../../../images/avatar/2.jpg' class='away'></a> </div> ",
-                "status": "<span class='badge badge-success'>Active</span>",
-                "tracker": "<button type='button' class='btn btn-sm btn-toggle btn-primary' data-toggle='button' aria-pressed='true'><span class='handle'></span></button>",
-                "starts": "01-25-2017",
-                "ends": "<strong>03-03-2018</strong>",
-                "comments": "This is a blank comments area, used to add comments and keep notes",
-                "action": "<button class='btn btn-xs'>Open case</button> <button class='btn btn-xs btn-danger pull-right' style='margin-left:5px'>Delete Record</button> <button class='btn btn-xs btn-success pull-right'>Save Changes</button> "
-            }, {
-                "name": "Upgrade to windows 8.1<br><small class='text-muted'><i>Budget: 2,000<i></small>",
-                "est": "<td><div class='progress progress-sm'><div class='progress-bar progress-bar-success progress-bar-striped' role='progressbar' aria-valuenow='48' aria-valuemin='0' aria-valuemax='100' style='width: 48%'></div></div></td>",
-                "contacts": "<div class='project-members'><a href='javascript:void(0)'><img src='../../../images/avatar/7.jpg' class='online' alt='user'></a><a href='javascript:void(0)'><img src='../../../images/avatar/3.jpg' class='online'></a> <a href='javascript:void(0)'><img src='../../../images/avatar/4.jpg' class='busy'></a><a href='javascript:void(0)'><img src='../../../images/avatar/5.jpg' class='away'></a> </div> ",
-                "status": "<span class='badge badge-success'>Active</span>",
-                "tracker": "<button type='button' class='btn btn-sm btn-toggle btn-primary' data-toggle='button' aria-pressed='true'><span class='handle'></span></button>",
-                "starts": "01-27-2017",
-                "ends": "<strong>02-30-2018</strong>",
-                "comments": "This is a blank comments area, used to add comments and keep notes",
-                "action": "<button class='btn btn-xs'>Open case</button> <button class='btn btn-xs btn-danger pull-right' style='margin-left:5px'>Delete Record</button> <button class='btn btn-xs btn-success pull-right'>Save Changes</button> "
-            }, {
-                "name": "Refurbish Architecture<br><small class='text-muted'><i>Budget: 1,200<i></small>",
-                "est": "<td><div class='progress progress-sm'><div class='progress-bar progress-bar-danger progress-bar-striped' role='progressbar' aria-valuenow='37' aria-valuemin='0' aria-valuemax='100' style='width: 37%'></div></div></td>",
-                "contacts": "<div class='project-members'><a href='javascript:void(0)'><img src='../../../images/avatar/7.jpg' class='away' alt='user'></a><a href='javascript:void(0)'><img src='../../../images/avatar/5.jpg' class='online'></a> </div> ",
-                "status": "<span class='badge badge-success'>Active</span>",
-                "tracker": "<button type='button' class='btn btn-sm btn-toggle btn-primary' data-toggle='button' aria-pressed='true'><span class='handle'></span></button>",
-                "starts": "01-29-2017",
-                "ends": "<strong>12-15-2019</strong>",
-                "comments": "This is a blank comments area, used to add comments and keep notes",
-                "action": "<button class='btn btn-xs'>Open case</button> <button class='btn btn-xs btn-danger pull-right' style='margin-left:5px'>Delete Record</button> <button class='btn btn-xs btn-success pull-right'>Save Changes</button> "
-            }, {
-                "name": "Create filters and directives<br><small class='text-muted'><i>Budget: 15,000<i></small>",
-                "est": "<td><div class='progress progress-sm'><div class='progress-bar progress-bar-warning progress-bar-striped' role='progressbar' aria-valuenow='100' aria-valuemin='0' aria-valuemax='100' style='width: 100%'></div></div></td>",
-                "contacts": "<div class='project-members'><a href='javascript:void(0)'><img src='../../../images/avatar/3.jpg' class='online' alt='user'></a><a href='javascript:void(0)'><img src='../../../images/avatar/2.jpg' class='online'></a> <a href='javascript:void(0)'><img src='../../../images/avatar/1.jpg' class='busy'></a><a href='javascript:void(0)'><img src='../../../images/avatar/7.jpg' class='away'></a> </div> ",
-                "status": "<span class='badge badge-success'>Active</span>",
-                "tracker": "<button type='button' class='btn btn-sm btn-toggle btn-primary' data-toggle='button' aria-pressed='true'><span class='handle'></span></button>",
-                "starts": "01-6-2017",
-                "ends": "<strong>11-09-2018</strong>",
-                "comments": "This is a blank comments area, used to add comments and keep notes",
-                "action": "<button class='btn btn-xs'>Open case</button> <button class='btn btn-xs btn-danger pull-right' style='margin-left:5px'>Delete Record</button> <button class='btn btn-xs btn-success pull-right'>Save Changes</button> "
-            }, {
-                "name": "Publish to Wrapbootstrap<br><small class='text-muted'><i>Budget: 4,000<i></small>",
-                "est": "<td><div class='progress progress-sm'><div class='progress-bar progress-bar-info progress-bar-striped' role='progressbar' aria-valuenow='95' aria-valuemin='0' aria-valuemax='100' style='width: 95%'></div></div></td>",
-                "contacts": "<div class='project-members'><a href='javascript:void(0)'><img src='../../../images/avatar/5.jpg' class='online' alt='user'></a><a href='javascript:void(0)'><img src='../../../images/avatar/1.jpg' class='online'></a> <a href='javascript:void(0)'><img src='../../../images/avatar/2.jpg' class='busy'></a><a href='javascript:void(0)'><img src='../../../images/avatar/4.jpg' class='away'></a> </div> ",
-                "status": "<span class='badge badge-success'>Active</span>",
-                "tracker": "<button type='button' class='btn btn-sm btn-toggle btn-primary' data-toggle='button' aria-pressed='true'><span class='handle'></span></button>",
-                "starts": "01-8-2017",
-                "ends": "<strong>07-07-2018</strong>",
-                "comments": "This is a blank comments area, used to add comments and keep notes",
-                "action": "<button class='btn btn-xs'>Open case</button> <button class='btn btn-xs btn-danger pull-right' style='margin-left:5px'>Delete Record</button> <button class='btn btn-xs btn-success pull-right'>Save Changes</button> "
+                "novedad": "Informan de Pelea en Calle Mayor",
+                "tiempo": "<td><div class='progress progress-sm'><div class='progress-bar progress-bar-warning progress-bar-striped' role='progressbar' aria-valuenow='20' aria-valuemin='0' aria-valuemax='100' style='width: 60%'></div></div></td>",
+                "requiriente": "<a href='#' data-toggle='modal' data-target='#modal-right'>Maria Magdalena Sánchez</a> ",
+                "estado": "<span class='badge badge-success'>Active</span>",
+                "hinicio": "08-11-2018 09:34:26",
+                "hfin": " ",
+                "telefono": "<strong>977512365</strong>",
+                "direccion": "Calle Mayor 25",
+                "acciones": "Se manda indicativo C1 para comprobar el suceso ",
+                "resolucion": "Sin datos todavía"
             }]
         };
 
+
     }); // End of use strict
 <?php echo '</script'; ?>
-><?php }
+>
+
+<!-- Modal -->
+<div class="modal modal-right fade" id="modal-right" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Datos Requiriente</h5>
+                <button type="button" class="close" data-dismiss="modal">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+                <div class="table-responsive">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th scope="col">Fecha</th>
+                                <th scope="col">Novedad</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>23-05-2017</td>
+                                <td>Alerta Vecina pelea en Calle Mayor</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="modal-footer modal-footer-uniform">
+                <button type="button" class="btn btn-bold btn-pure btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-bold btn-pure btn-primary float-right">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /.modal -->
+
+<!--
+    <div class="table-responsive">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th scope="col">Fecha</th>
+                                <th scope="col">Novedad</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>23-05-2017</td>
+                                <td>Alerta Vecina pelea en Calle Mayor</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+--><?php }
 }
